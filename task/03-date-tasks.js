@@ -22,7 +22,7 @@
  *    'Sun, 17 May 1998 03:00:00 GMT+01' => Date()
  */
 function parseDataFromRfc2822(value) {
-    return new Date(value);
+   throw new Error('Not implemented');
 }
 
 /**
@@ -37,7 +37,7 @@ function parseDataFromRfc2822(value) {
  *    '2016-01-19T08:07:37Z' => Date()
  */
 function parseDataFromIso8601(value) {
-    return Date.parse(value);
+   throw new Error('Not implemented');
 }
 
 
@@ -56,9 +56,7 @@ function parseDataFromIso8601(value) {
  *    Date(2015,1,1)    => false
  */
 function isLeapYear(date) {
-    const year = date.getFullYear();
-    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) return true;
-    return false;
+   throw new Error('Not implemented');
 }
 
 
@@ -78,9 +76,7 @@ function isLeapYear(date) {
  *    Date(2000,1,1,10,0,0),  Date(2000,1,1,15,20,10,453)   => "05:20:10.453"
  */
 function timeSpanToString(startDate, endDate) {
-    const sub = new Date(endDate - startDate);
-    const subString = sub.toISOString();
-    return subString.substring(11, subString.length - 1);
+   throw new Error('Not implemented');
 }
 
 
@@ -98,16 +94,7 @@ function timeSpanToString(startDate, endDate) {
  *    Date.UTC(2016,3,5,21, 0) => Math.PI/2
  */
 function angleBetweenClockHands(date) {
-    var hours = date.getUTCHours();
-    var minutes = date.getUTCMinutes();
-    var angleHour = (60 * hours + minutes) / 2;
-    var angleMinutes = 6 * minutes;
-    var angle = angleHour - angleMinutes;
-    var angleNotCircle = angle - (Math.floor(angle / 360) * 360);
-    function degToRadian(angle) {
-        return (Math.PI * angle / 180);
-    }
-    return angleNotCircle  > 180 ? degToRadian(360 - angleNotCircle ) : degToRadian(angleNotCircle );
+    throw new Error('Not implemented');
 }
 
 
